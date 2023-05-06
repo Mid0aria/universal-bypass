@@ -2,7 +2,7 @@
 import requests
 from os import system
 
-system("cls && title 𝙇𝙄𝙉𝙆𝙑𝙀𝙍𝙏𝙄𝙎𝙀 𝙇𝙄𝙉𝙆 𝘽𝙔𝙋𝘼𝙎𝙎𝙀𝙍")
+system("cls && title 𝙇𝙄𝙉𝙆𝙑𝙀𝙍𝙏𝙄𝙎𝙀 𝙇𝙄𝙉𝙆 𝘽𝙔𝙋𝘼𝙎𝙎𝙀𝙍 / Github: @mid0aria")
 
 
 def purple(text):
@@ -25,19 +25,22 @@ def red(text):
         faded += (f"\033[38;2;255;{green};0m{character}\033[0m")
     return faded
 
+while True:
+	link = input(purple("[>] Linkvertise link : "))
 
-link = input(purple(" [>] Linkvertise link : "))
+	headers = {
+		"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+	    }
 
-headers = {
-	"origin": "https://thebypasser.com",
-	"referer": "https://thebypasser.com/"
-    }
+	try:
+	    data = requests.get(f"https://bypass.pm/bypass2?url=" + link, headers=headers)
+	    link = data.json()["destination"]
+	    plugin = data.json()["plugin"]
+	    print(purple(f"[>] Destination link : {link}"))
+	    print(red(f"[>] Plugin: {plugin}"))
+	except:
+	    print(red("[!] An unexpected error occurred"))
 
-try:
-    data = requests.get(f"https://api.toksaver.com/bypass/" + link, headers=headers)
-    link = data.json()["link"]
-    print(purple(f" [>] Destination link : {link}"))
-except:
-    print(red(" [!] An unexpected error occurred"))
-
-system("pause >nul")
+	select = int(input("[1] Bypass\n[99] Exit\n> "))
+	if select == 99:
+		break
