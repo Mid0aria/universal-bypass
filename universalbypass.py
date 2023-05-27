@@ -2,7 +2,7 @@
 import requests
 from os import system
 
-system("cls && title 𝙇𝙄𝙉𝙆𝙑𝙀𝙍𝙏𝙄𝙎𝙀 𝙇𝙄𝙉𝙆 𝘽𝙔𝙋𝘼𝙎𝙎𝙀𝙍 / Github: @mid0aria")
+system("cls && title Universal Link Bypasser / Github: @mid0aria")
 
 
 def purple(text):
@@ -26,10 +26,10 @@ def red(text):
     return faded
 
 while True:
-	link = input(purple("[>] Linkvertise link : "))
+	link = input(purple("[>] Link : "))
 
 	headers = {
-		"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+		"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
 	    }
 
 	try:
